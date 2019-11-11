@@ -20,3 +20,12 @@ console.log(
 if(!files.directoryExists('components')){
     fs.mkdirSync('components')
 }
+
+
+var args = require('minimist')(process.argv.slice(2))
+
+console.log( args.mode )
+
+if(!files.fileExists(args.mode+'.js')){
+    fs.writeFileSync(args.mode+'.js',`hahahahahahahaha`)
+}
